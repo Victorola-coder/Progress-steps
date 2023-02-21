@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --border-empty: #e0e0e0;
+  --border-fill: #009933;
+}
+
+body {
+  background-color: aliceblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+h3 {
+  padding: 1em;
+}
+.progress-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  position: relative;
+}
+
+.progress-cont::before {
+  content: "";
+  background-color: var(--border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 4px;
+  z-index: -1;
+}
+
+.progress {
+  background-color: #009933;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 0%;
+  height: 4px;
+  z-index: -1;
+  transition: 0.4s ease-in;
+}
+
+.circle {
+  background-color: whitesmoke;
+  color: #1924c3;
+  border-radius: 15px;
+  border: 2px solid var(--border-empty);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3em;
+  font-size: 16px;
+}
+
+.circle.active {
+  border-color: #009933;
+}
+
+.buttons {
+  margin-top: 2em;
+}
+
+.btn {
+  background-color: #009933;
+  padding: 8px 20px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  margin: 1rem;
+  color: #e0e0e0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn:disabled{
+    background-color: #e0e0e0;
+    color:#A9A9A9;
+    cursor:not-allowed;
+}
